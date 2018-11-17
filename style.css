@@ -247,14 +247,14 @@ p {
 
 .line-shape-white,
 .line-shape {
-    width: 80px;
+    width: 700px;
     height: 2px;
     background-color: #fb397d;
     margin-top: 15px;
 }
 
 .line-shape {
-    margin-left: calc(50% - 40px);
+    margin-left: calc(20% - 40px);
 }
 
 .table {
