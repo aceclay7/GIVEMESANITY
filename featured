@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>SMDSTREAMS</title>
+
+    <!-- Core Stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+    
+    <!-- ***** Header Area Start ***** -->
+    <header class="header_area animated">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Menu Area Start -->
+                <div class="col-12 col-lg-10">
+                    <div class="menu_area">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="#"></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ca-navbar" aria-controls="ca-navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                            <!-- Menu Area -->
+                            <div class="collapse navbar-collapse" id="ca-navbar">
+                                <ul class="navbar-nav ml-auto" id="nav">
+                                    <li class="nav-item active"><a class="nav-link" href="#home"></a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#about"></a></li>
+                                   <!-- <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#screenshot">Screenshot</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>-->
+                                    <li class="nav-item"><a class="nav-link" href="#contact"></a></li>
+                                </ul>
+                            
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Signup btn -->
+         
+                
+          </div>
+        </div> 
+                
+    </header> 
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Wellcome Area Start ***** -->    
+    <section class="wellcome_area clearfix" id="home">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md">
+                    <div class="wellcome-heading">
+                        <h2>SMDSTREAMS</h2>
+                        <div></div>
+                        <h3>SMD</h3>
+                       
+                    </div>
+                    <div class="get-start-area">
+                        <!-- Form Start -->
+                        <form action="#" method="post" class="form-inline">
+                            <img src="img/bg-img/NEWLOGO!.jpg" alt="">
+                        </form>
+                        <!-- Form End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Welcome thumb -->
+        <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
+            
+        </div>
+        
+    </section>
+                         
+
+    <!-- ***** Wellcome Area End ***** -->
+
+    <!-- ***** Special Area Start ***** -->
+        <section class="special-area bg-white section_padding_40" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        </div>
+                       <div class="section-heading text-center">
+                        <h2>Welcome To The SMDstreams Featured Streamers page!</h2>
+                           <h3>Community Discord : <a href="https://discord.gg/C2HctEx" target="_blank">https://discord.gg/C2HctEx</a></h3>
+                           <h4><img src="img/bg-img/featured.png" alt=""> FEATURED STREAMERS OF THE WEEK: • <a href="https://www.twitch.tv/dreamzzdx" target="_blank">dreamzzdx</a> • <a href="https://www.twitch.tv/ehms" target="_blank">ehms</a> •  <a href="https://www.twitch.tv/skittlesrandom" target="_blank">SkittlesRandom</a> • <a href="https://www.twitch.tv/beardedfury102" target="_blank">BeardedFury</a> • <img src="img/bg-img/featured.png" alt=""></h4>
+                           <h2>Say hello to our live members!</h2>
+                           
+                        <div class="line-shape"></div>
+                    </div>
+                        
+                    <!-- Section Heading Area -->
+                   
+                </div>
+            </div>
+            
+
+   <!-- Add a placeholder for the Twitch embed -->
+   <div id="twitch-embed"></div>
+
+   <!-- Load the Twitch embed script -->
+   <script src="https://embed.twitch.tv/embed/v1.js"></script>
+   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+   <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+     <script type="text/javascript">
+           function ninjaclicks(){
+                   var streamTime = 60 * 15,
+                   display = document.querySelector('#time');
+                   startTimer(streamTime, display);
+           }  
+
+       var counter = 0;     
+       var BaseURL = 'https://api.twitch.tv/kraken/streams?channel=';
+       var clientID = '&client_id='+'oxl2dbxw3xf3npt807mbhbo1n8jmg4';        
+       var ChannelList = ["commanderroot","twitchpresents"];      
+       var LiveChannelList = [];
+       
+       window.onload = function () {
+           ChannelList.forEach(function(entry, i) {
+                   $.getJSON((BaseURL + entry + clientID), function(channel) {
+
+                       if (channel["_total"] > 0) {                        
+                           LiveChannelList.push(entry);                             
+
+                       } else {
+                           console.log("rip");
+                       }
+
+   console.log(ChannelList.length - 1 + "+>=" + i);
+                       if((ChannelList.length - 1) == i){
+                           ninjaclicks()
+                       }
+                       
+                   });
+               }
+           );
+       };
+
+          
+
+      function startTimer(duration, display)
+       {         
+       var nostreamers = "There are no #SMDStreams streamers online at the moment! Check back a bit later :)";            
+       if (LiveChannelList.length > 0 ) 
+       {
+         var embed = new Twitch.Embed("twitch-embed", 
+                         {
+                           width: 854,
+                           height: 480,
+                           channel: LiveChannelList[0],
+                           layout: "video",
+                           autoplay: true,
+                           allowfullscreen: true                        
+                         });
+
+                         var button = document.createElement("button");
+                         button.innerHTML = "Next Stream";
+
+                         var body = document.getElementsByTagName("LI")[3];
+                         body.appendChild(button);
+
+                         button.addEventListener ("click", function() 
+                           {
+                           var player = embed.getPlayer();
+                           counter = counter +1;
+                           timer = duration; 
+                           if (counter >= LiveChannelList.length)
+                            {
+                             counter = 0;
+                            }
+                           player.setChannel(LiveChannelList[counter]);                           
+                           });
+
+                 var timer = duration, minutes, seconds;
+                 setInterval(function () {
+                     minutes = parseInt(timer / 60, 10)
+                     seconds = parseInt(timer % 60, 10);
+             
+                     minutes = minutes < 10 ? "0" + minutes : minutes;
+                     seconds = seconds < 10 ? "0" + seconds : seconds;
+             
+                     display.textContent = minutes + ":" + seconds;
+             
+                     if (--timer < 0) 
+                     {       
+                         counter = counter + 1;      
+                         var player = embed.getPlayer();
+                         player.setChannel(LiveChannelList[counter]);
+
+                         timer = duration; 
+                         
+                         if (counter > LiveChannelList.length)
+                         {
+                           counter = 0;
+                         }                 
+                     }
+                  
+                 }, 1000);
+             }    
+             else {
+               document.write(nostreamers);
+             }     
+       }                 
+   </script>
+                
+                <h4><div>CHANNEL MOVING ON IN <span id="time">15:00</span> minutes!</div></h4>
+            <h4><div>To access channel chat, hover over the streamer and open on Twitch in the bottom right corner.</div></h4>
+  <li></li>
+
+                              
+    <!-- ***** Footer Area Start ***** -->
+                <div>
+                <div class="section-heading text-center">
+                </div>
+                       <div class="section-heading text-center">
+                        <h2>Thank you for visiting!</h2>
+                           <h3>For more information about membership, join the discord.</h3>
+                           <h3></h3>
+                           
+                        <div class="line-shape"></div>
+                    </div>
+                    <h2><center><img src="img/bg-img/logosmall.png" alt=""></center>
+                                               </h2>
+        
+                           
+        <footer class="footer-social-icon text-center section_padding_70 clearfix">
+        <!-- footer logo -->
+        <div class="footer-text">
+            <h2></h2>
+        </div>
+        <!-- social icon-->
+        <div class="footer-social-icon">
+            <a href="https://www.twitter.com/SMD_Streams"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/supermandude2018/""> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.twitch.tv/supermandude" target="_blank"><img src="img/bg-img/twitch_button.png" alt=""></a>
+            <a href="https://discord.gg/C2HctEx" target="_blank"><img src="img/bg-img/discord_button.png" alt=""></a>
+        </div>
+        <div class="footer-menu">
+            <nav>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Foooter Text-->
+        <div class="copyright-text">
+            <!-- ***** Copying or redistribution of this code is PROHIBITED!! ***** -->
+            <p>Copyright ©2018 Designed by <a href="https://www.twitch.tv/supermandude" target="_blank">Shawn C.</a> and <a href="https://twitch.tv/MissSpiderbite" target="_blank">CoriiChaos</a></p>
+        </div>
+    </footer>
+    <!-- ***** Footer Area Start ***** -->
+
+    <!-- Jquery-2.2.4 JS -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap-4 Beta JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="js/plugins.js"></script>
+    <!-- Slick Slider Js-->
+    <script src="js/slick.min.js"></script>
+    <!-- Footer Reveal JS -->
+    <script src="js/footer-reveal.min.js"></script>
+    <!-- Active JS -->
+    <script src="js/active.js"></script>
